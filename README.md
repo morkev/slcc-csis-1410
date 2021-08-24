@@ -890,22 +890,18 @@ You have a class that adds two numbers, but the same class creates a window disp
 
 To create a high cohesive solution, you would have to create a class Window and a class Sum. The window will call Sum's method to get the result and display it. This way you will develop separately the logic and the GUI of your application.
 
-An explanation of what it is from Steve McConnell's Code Complete:
-```
-Cohesion refers to how closely all the routines in a class or all the code in a routine support a central purpose. Classes that contain strongly related functionality are described as having strong cohesion, and the heuristic goal is to make cohesion as strong as possible. Cohesion is a useful tool for managing complexity because the more code in a class supports a central purpose, the more easily your brain can remember everything the code does.
-```
+An explanation of what it is from Steve McConnell's, "Code Complete":
 
-Achieving cohesion, from Uncle Bob's Clean Code:
-```
-Classes should have a small number of instance variables. Each of the methods of a class should manipulate one or more of those variables. In general the more variables a method manipulates the more cohesive that method is to its class. A class in which each variable is used by each method is maximally cohesive.
+> Cohesion refers to how closely all the routines in a class or all the code in a routine support a central purpose. Classes that contain strongly related functionality are described as having strong cohesion, and the heuristic goal is to make cohesion as strong as possible. Cohesion is a useful tool for managing complexity because the more code in a class supports a central purpose, the more easily your brain can remember everything the code does.
 
-In general it is neither advisable nor possible to create such maximally cohesive classes; on the other hand, we would like cohesion to be high. When cohesion is high, it means that the methods and variables of the class are co-dependent and hang together as a logical whole.
-```
+Achieving cohesion, from Uncle Bob's "Clean Code":
+
+> Classes should have a small number of instance variables. Each of the methods of a class should manipulate one or more of those variables. In general the more variables a method manipulates the more cohesive that method is to its class. A class in which each variable is used by each method is maximally cohesive. In general it is neither advisable nor possible to create such maximally cohesive classes; on the other hand, we would like cohesion to be high. When cohesion is high, it means that the methods and variables of the class are co-dependent and hang together as a logical whole.
+
 
 The notion of cohesion is strongly related with the notion of coupling; also, there is a principle based on the heuristic of high cohesion, named Single Responsibility Principle (the S from SOLID).
 
 ![cohesion](https://user-images.githubusercontent.com/83437383/130538021-33512242-8246-4475-bc83-4c554a208602.png)
-
 
 High cohesion is a software engineering concept. Basically, it says a class should only do what it is supposed to do, and does it fully. Do not overload it with functions that it is not supposed to do, and whatever directly related to it should not appear in the code of some other class either. Examples are quite subjective, since we also have to consider the scale. A simple program should not be too modularized or it will be fragmented; while a complex program may need more level of abstractions to take care of the complexity.
 
