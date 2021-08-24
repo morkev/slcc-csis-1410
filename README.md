@@ -16,6 +16,7 @@ Structure of a JavaDoc Comment
 
 ---
 ## UML Associations & Multiplicity
+
 Associations show relationships between Classes.
 
 ```
@@ -31,7 +32,7 @@ Binary Associations:
 - ClassX knows about ClassY.
 - ClassY knows about ClassX.
 
-Types of Unary Associations:
+### Types of Unary Associations:
 - Association ... has-a relationship.
 - Aggregation ... whole–part relationships.
 	- ClassB is part of ClassA.
@@ -41,19 +42,16 @@ Types of Unary Associations:
 	- Life cycle of the part class depends on the whole class.
 	- ClassB depends on the existence of ClassA.
 
-Multiplicity: specify how many objects are in a relationship.
+### Multiplicity
+Specify how many objects are in a relationship.
 
-//TODO
-0 .. 1
-an optional instance (zero or one)
-n
-exactly n instances
-*
-zero or more instances
-1 .. *
-one or more instances
-n .. m
-n to m instances
+Instance | Description
+--- | ---
+0 .. 1 | an optional instance (zero or one)
+n | exactly n instances
+(*) | zero or more instances
+1 .. * | one or more instances
+n .. m | n to m instances
 
 ---
 ## Fundamentals of Programming – Concepts
@@ -358,37 +356,22 @@ Animal a3 = getSomeAnimal();
 if (a3 instanceof Bird)
     Bird myBird = (Bird) a3;
 ```
-
-PROMOTION
-TYPE
-SIZE
-VALID PROMOTION
-double
-8 bytes
--
-float
-4 bytes
-double
-long
-8 bytes
-double, float
-int
-4 bytes
-double, float, long
-char
-2 bytes
-double, float, long, int
-short
-2 bytes
-double, float, long, int, (not char)
-byte
-1 byte
-double, float, long, int, (not char), short
-boolean
-
-<b>Dynamic Binding</b>
+### Dynamic Binding
 
 All calls to overridden methods are resolved at run time.
+
+### Promotion
+
+TYPE | SIZE | VALID PROMOTION
+--- | --- | ---
+double | 8 bytes | -
+float | 4 bytes | double
+long | 8 bytes | double, float
+int | 4 bytes | double, float, long
+char | 2 bytes | double, float, long, int
+short | 2 bytes | double, float, long, int, (not char)
+byte | 1 byte | double, float, long, int, (not char), short
+boolean | | -
 
 ---
 ## Interfaces
@@ -632,12 +615,10 @@ What can you expect if you call such a method?
 Raw types are generic classes or interfaces without any type of arguments – e.g. List list1, or ArrayList list2.
 Raw types are allowed because of legacy reasons, however, they should be avoided in new code.
 
-ArrayList
-LinkedList
-Random access (with index).
-Only sequential access of elements.
-Uses dynamically resizing array to implement List.
-Uses doubly-linked list to implement List.
+ArrayList | LinkedList
+--- | ---
+Random access (with index). | Only sequential access of elements.
+Uses dynamically resizing array to implement List. | Uses doubly-linked list to implement List.
 
 ---
 ## Lambdas
@@ -720,7 +701,7 @@ Commonly used type parameter names:
 - S, U, V, ... – additional types.
 NOTE: The type parameter section is surrounded by < >.
 
-Generic Type
+### Generic Type
 A generic type is a class or an interface that has been declared with one or multiple type parameters.       
 Generic type parameters can be restricted to a group of types that implement a given interface. You can do that by using the keyword 'extends.'
 ```
@@ -991,13 +972,11 @@ If the exception was handled in the catch block the execution resumes after th
 - Only objects of type Throwable can be used with the exception handling mechanism.
 - Errors indicate a serious problem that programs typically can't recover from.
 
-//TODO
-Error
-Don't try catching it          
-RuntimeException
-Fix the code
-Exceptions that are not RuntimeExceptions
-Catch or declare
+PROBLEM | HOW TO SOLVE
+--- | ---
+Error | Don't try catching it
+RuntimeException | Fix the code
+Exceptions that are not RuntimeExceptions | Catch or declare
 
 ---
 ## Serialization
@@ -1031,13 +1010,3 @@ To re-create an object from a file, create an ObjectInputStream with a FileInput
 If a field is declared as transient, then such will be ignored during serialization
 If a class wants to have its state serialized or deserialized it needs to implement the interface Serializable.
 Serialization does not only apply to objects – primitive types are allowed.
-
----
-## RESOURCES & CURIOSITIES
-
-JUnit
-- https://www.vogella.com/tutorials/JUnit/article.html
-
-Math Code:
-- https://sites.google.com/site/logicedges/how-to-draw
-
