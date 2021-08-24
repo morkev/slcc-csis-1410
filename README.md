@@ -904,6 +904,9 @@ In general it is neither advisable nor possible to create such maximally cohesiv
 
 The notion of cohesion is strongly related with the notion of coupling; also, there is a principle based on the heuristic of high cohesion, named Single Responsibility Principle (the S from SOLID).
 
+![cohesion](https://user-images.githubusercontent.com/83437383/130538021-33512242-8246-4475-bc83-4c554a208602.png)
+
+
 High cohesion is a software engineering concept. Basically, it says a class should only do what it is supposed to do, and does it fully. Do not overload it with functions that it is not supposed to do, and whatever directly related to it should not appear in the code of some other class either. Examples are quite subjective, since we also have to consider the scale. A simple program should not be too modularized or it will be fragmented; while a complex program may need more level of abstractions to take care of the complexity.
 
 ---
