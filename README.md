@@ -1,5 +1,5 @@
 # SLCC-CSIS-1410
-### JavaDoc
+## JavaDoc
 
 JavaDoc is a documentation generator from Sun – it generates API documentation in HTML format.
 The "doc comment" format is <i>de facto</i> industry standard. They minimize the effort of creating documentation, and make the process of keeping documentation up-to-date or using third-party classes (incl. Java API) easier. They also allow you to hyperlink related documents together.
@@ -14,7 +14,6 @@ Structure of a JavaDoc Comment
 	- @throws ... exceptions the method may throw
 	- @author ... who wrote the class/interface
 
----
 ## UML Associations & Multiplicity
 
 Associations show relationships between Classes.
@@ -24,6 +23,7 @@ ClassA –––––––> ClassB
   Unary Associations
 ```
 
+```
 Unary Associations:
 - ClassA knows about ClassB
 - ClassB knows nothing about ClassA
@@ -31,6 +31,7 @@ Unary Associations:
 Binary Associations:
 - ClassX knows about ClassY.
 - ClassY knows about ClassX.
+```
 
 ### Types of Unary Associations:
 - Association ... has-a relationship.
@@ -53,7 +54,6 @@ n | exactly n instances
 1 .. * | one or more instances
 n .. m | n to m instances
 
----
 ## Fundamentals of Programming – Concepts
 - Access modifiers determine who can access a given class or class member – e.g. public, private...
 - Class declarations are used to create new types (like a blueprint).
@@ -79,31 +79,28 @@ n .. m | n to m instances
 - Local variables are only available within the method where they are declared – they are used to store a value temporarily.
 - Fields are variables that declared inside a class but outside of a method; they are used to implement the attributes of a class.
 
----
 ## Class String
 
-```
+```java
 String tree = "oak";
-
 // How would you return the second letter ('a')?
 char ch = tree.charAt(1);
 
 // Assume two variables have been declared:
-
 String word1 = "house";
 String word2 = "dog";
 
 // Result of the following method:
 word1.concat(word2)
-// a new string "housedog" is returned
+// A new string "housedog" is returned
 
 // Assume you initialize a String variable called word.
 // Which of the following statements gives you the length of the string?
 int length = word.length();
 ```
 
-```
-char[ ] nArray = {'B','e','n'};
+```java
+char[] nArray = {'B','e','n'};
 String name = new String(nArray);
 
 // Use methods from class String to complete the method printReverse:
@@ -115,7 +112,6 @@ private void printReverse (String str) {
 }
 ```
 
-
 ### Class StringBuilder
 
 Such objects are like String objects, except that they can be modified.
@@ -125,7 +121,7 @@ Like a variable-length array that contains characters.
 Capacity specifies how many characters can be stored.
 The capacity default size is 16.
 
-```
+```java
 StringBuilder sb = new StringBuilder();
 sb.append("hello");
 
@@ -142,7 +138,6 @@ Prefer class String unless:
 StringBuilder has a number of overloaded methods – all of them have the same return type: StringBuilder.
 StringBuilder has methods to replace, read, reverse, modify, or substring.
 
----
 ## JUnit
 
 JUnit is a framework to write and run repeatable tests in Java.
@@ -171,19 +166,20 @@ If the following method is declared it is executed before each of the unit tests
 - setUp
 
 Which of the following makes sure that an expected exception (MyException) is thrown? 
-- Add a parameter to the annotation - like this:   @Test(expected = MyException.class)
+- Add a parameter to the annotation - like this:
+```java
+@Test(expected = MyException.class)
+```
 
 In order to identify appropriate test data, we use a technique called equivalence partitioning. It is a technique that divides the input data into groups of equivalent data called equivalent partitions. These partitions are used to derive test cases that uncover classes of errors. In order to provide adequate test coverage, each of the equivalence partitions should be covered in at least one of the JUnit tests.
 
-There are a number of popular naming conventions for JUnit tests. 
-In this class, we use the following :
+There are a number of popular naming conventions for JUnit tests:
 
-```
+```java
 - MethodName_StateUnderTest_ExpectedBehavior 
 - Example: isLeapYear_YearIsMultipleOf4ButNotOf100_True
 ```
 
----
 ## Abstract Methods & Classes
 
 Abstract Methods/Classes are methods/classes that are declared with the keyword abstract.
@@ -195,7 +191,7 @@ Abstract Methods/Classes are methods/classes that are declared with the keyword 
 - Abstract Methods have no method body.
 - Abstract Methods can be only declared in abstract classes (or interfaces).
 
-```
+```java
 // EXAMPLE
 public abstract void draw();
 ```
@@ -209,7 +205,6 @@ When to use abstract classes?
 3. When we need to model an "is-a" relationship between classes.
 4. When we need to prevent the class from being instantiated itself.
 
----
 ## Final Methods & Classes
 
 - Final Methods cannot be overridden in a subclass.
@@ -227,7 +222,6 @@ When to use abstract classes?
 
 Concrete Classes provide implementation for every method they declare and for every abstract method they inherit, and they can also be instantiated.
 
----
 ## Inheritance
 Mechanism that allows us to model a relationship between classes where one class is-a special kind of another class.
 - EXAMPLE: A ToggleButton is a special kind of Button.
@@ -236,7 +230,7 @@ The purpose for inheritance is a dynamic binding which provides flexibility. It 
 
 Is-a relationship represents inheritance.
 An object of a subclass can be treated as an object of its superclass.
-```
+```java
 // Examples:
 a student is-a person
 a polygon is-a twoDimensionalShape
@@ -269,16 +263,18 @@ ClassB is subclass from ClassA.
 ClassB is a superclas from ClassC.
 ```
 
----
 ## Java Access Modifiers
 
 - public ... accessible to any class.
 - private ... accessible only within the class itself.
 - protected ... accessible within its own class, within its subclasses, and within other classes in the same package.
-	- useful to grant access to certain methods – however, fields should remain private.
-			- for flexibility – allows to change implementation methods
-			- for control – input validation, read only
-			- for data integrity – any subclass can modify protected fields
+	- useful to grant access to certain methods 
+	– fields should remain private.
+	- created for flexibility and control
+	– allows to change implementation methods
+	– input validation – i.e.read only
+	- for data integrity 
+	– any subclass can modify protected fields
 
 Methods, fields, .. retain their original access modifier when they are inherited by the subclass.
 
@@ -300,7 +296,6 @@ Advantages:
 - Catches errors in the method signature (misspelled name, incorrect parameter list).
 - Makes your code more clear to programmers.
 
----
 ## Polymorphism
 
 Polymorphism is the characteristic of being able to assign a different meaning or usage to something in different contexts – specifically, to allow an entity such as a variable, a method, or an object to have more than one form. Enables you to write programs that process objects that share the same superclass as if they were all objects of the superclass.
@@ -310,17 +305,18 @@ Three pillars of Object Oriented Programming:
 2. Inheritance
 3. Polymorphism 
 
+---
 ### Polymorphism & Interfaces
+Polymorphism enables you to deal in generalities and let the run-time environment handle the specifics. You can tell objects to be have in manners appropriate to those objects, without even knowing their types – as long as the objects belong to the same inheritance hierarchy or they implement the same interface.
 
 - Interfaces allow objects of unrelated classes to be processed in a polymorphic way.
 - If a class implements an interface, all objects of the class provide the functionality described by the interface, and all objects of that class have an is-a relationship with the interface type. That is also true for all subclasses of that class, because interfaces are public.
-
-Polymorphism enables you to deal in generalities and let the run-time environment handle the specifics. You can tell objects to be have in manners appropriate to those objects, without even knowing their types – as long as the objects belong to the same inheritance hierarchy or they implement the same interface.
 - Polymorphism facilitates the design and implementation of extensible systems.
 - Software that invokes polymorphic behavior is independent of the object types to which messages are sent.
 	- New derived classes can be added with little or no modification to the general portions of the program.
 	- Only those parts that require direct knowledge of the new classes need to be modified
 
+---
 ### Polymorphic Behavior
 Virtual Method Invocation – The Java virtual machine (JVM) calls the appropriate method for the object that is referenced in each variable, not the method defined by the variable's type. The type of referenced object, not the type of the variable, determines which method is called.
 
@@ -329,13 +325,14 @@ Therefore:
 - Which methods are accessible depend on the type of the variable.
 - Which specific method is executed depends on the type of the instance that is referenced.
 
+---
 ### Downcasting
 
 When you treat a variable of the superclass as an instance of the subclass.
-```
+```java
 ClassB varB = (ClassB) varA;
-varB is a subclass variable
-varA is a superclass variable
+// varB is a subclass variable
+// varA is a superclass variable
 
 // Works, because a1 is an instance of Bird
 Animal a1 = new Bird();
@@ -351,16 +348,14 @@ Bird myBird = (Bird) a3;
 ```
 
 The '<i><b>instanceof</b></i>' operator helps us ensure that the instance is of the right type.
-```
+```java
 Animal a3 = getSomeAnimal();
 if (a3 instanceof Bird)
     Bird myBird = (Bird) a3;
 ```
-### Dynamic Binding
+<b>Dynamic Binding</b>: all calls to overridden methods are resolved at run time.
 
-All calls to overridden methods are resolved at run time.
-
-### Promotion
+## Promotion
 
 TYPE | SIZE | VALID PROMOTION
 --- | --- | ---
@@ -373,7 +368,6 @@ short | 2 bytes | double, float, long, int, (not char)
 byte | 1 byte | double, float, long, int, (not char), short
 boolean | | -
 
----
 ## Interfaces
 - Interfaces form a contract.
 - Enforced at compile time.
@@ -388,17 +382,16 @@ How to use interfaces:
 
 One of the most commonly used interfaces is the interface Comparable (compareTo). It has a method that compares two elements – this allows us to establish an order between elements, which in turn enables us to sort elements of the given type.
 
-<b>Java Interfaces</b>
-
 Java interfaces are reference types, and cannot be instantiated.
 Interfaces are implicitly abstract.
-Interface members:
-- Constants – implicitly public, static and final
-- Abstract/default/static/private methods – methods that are declared in a Java interface are assumed to be public and abstract unless specified otherwise.
-- Nested types
+
+### Interface members:
+- Constants (implicitly public, static & final).
+- Abstract / default / static/ private methods (methods that are declared in a Java interface are assumed to be public and abstract unless specified otherwise).
+- Nested types.
 
 ### Interface Declaration
-```
+```java
 // They look like a class declaration, but with "interface" instead of "class."
 // They are thus PascalCased.
 // Often adjectives or nouns – Comparable, AutoCloseale, List, Set, etc.
@@ -429,7 +422,6 @@ List<String> wordList = new ArrayList<>();
 - Implementing an interface "is-a" relationship between a class and an interface.
 - Extending an interface "is-a" relationship between internships
 
----
 ## Class Object
 
 Is the root of class hierarchy.
@@ -446,7 +438,7 @@ Object has 11 methods:
 It's important to follow that contract , because other classes rely on the proper implementation of these methods.
 Whenever 'equals' is overridden, 'hashCode' needs to be overridden as well.
 
-```
+```java
 // Assume you have two Circle objects c1 and c2.
 // You know that c1.equals(c2) returns false. Is the following statement true or false?
 Given that 
@@ -457,7 +449,6 @@ c1.hashCode() is different from c2.hashCode().
 // This is false
 ```
 
----
 ## Graphical User Interface
 
 Characteristics we should strive for in order to make GUIs user-friendly.
@@ -471,9 +462,11 @@ In relation to dialogs, the word modal stands for the ability of blocking user i
 AWT components are heavyweight components that display differently on different platforms.
 Swing components are lightweight components that allow a uniform look and feel across different platforms.
 
+```
 - Containers are components that can contain other components.
 - Components are objects that can be displayed on the screen and that can interact with the user.
 - JComponent is a superclass of all lightweight Swing components.
+```
 
 Many programs call the method setDefaultCloseOperation from JFrame and pass a static constant to ensure that the application is terminated when the user presses the x button on the top right of the window. EXIT_ON_CLOSE provides this functionality.
 
@@ -482,7 +475,7 @@ Many programs call the method setDefaultCloseOperation from JFrame and pass a st
 - JComponents must be placed inside a top-level container e.g. – JFrame, JDialog, or JApplet.
 
 ---
-## GUI Event Handling 
+### Event Handling 
 
 GUIs are event driven.
 - Event: something significant that happens (click a button).
@@ -508,7 +501,7 @@ You need to write some code that responds to a text change in a JTextField. How 
 - Create a class that implements the interface ActionListener and override the method actionPerformed
 
 ---
-## Layout Managers
+### Layout Managers
 
 Swing provides several layout managers that determine the positioning of your components.
 
@@ -521,7 +514,6 @@ FlowLayout: This LayoutManager lays out components row by row. If the window get
 
 SwingConstants provides an interface that includes constants that are used in combination with Swing GUI.
 
----
 ## Auto-boxing, Unboxing & Wrapper Classes
 
 Auto-boxing is the automatic conversion that the Java compiler makes between a primitive type and its corresponding object wrapper class.
@@ -533,7 +525,7 @@ Reasons to use wrapper classes:
 - To use Generic Collections
 - Access useful functionality provided by wrapper class members
 
-```
+```java
 01  List<Integer> numbers = new ArrayList<>();
 02  numbers.add(25);17798sysout
 03
@@ -547,13 +539,12 @@ Reasons to use wrapper classes:
 // 07 is an example of unboxing
 ```
 
-```
+```java
 // This is an example of auto-boxing
 int numberA = 3;
 Integer numberB = numberA;
 ```
 
----
 ## Class Collections
 
 All the methods in class Collections operate on or return collections.
@@ -564,7 +555,7 @@ Sort method:
 - Class Collections includes two sort methods. One takes one parameter, the other two. 
 - Sort returns nothing but it changes the collection that was passed as an argument
 
-```
+```java
 List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
 Collections.fill(numbers, 7);
 System.out.println(numbers);
@@ -572,19 +563,18 @@ System.out.println(numbers);
     // Replaces all elements of the list with the specified type.
 ```
 
-```
+```java
 List<Character> letters = Arrays.asList('a', 'r', 'o', 'u', 'n', 'd');
 Collections.sort(letters, Collections.reverseOrder());
 System.out.println(letters);
-    // OUTPUT: [u, r, o, n, d, a]
+// OUTPUT: [u, r, o, n, d, a]
 
 List<Character> letters = Arrays.asList('a', 'r', 'o', 'u', 'n', 'd');
 Collections.reverse(letters);
 System.out.println(letters);
-    // OUTPUT: [d, n, u, o, r, a]
+// OUTPUT: [d, n, u, o, r, a]
 ```
 
----
 ## Generic Collection
 
 A Collection is an object that can hold references of other objects.
@@ -597,7 +587,7 @@ What can you do by calling a method from interface Collection?
 - Check whether there are no elements in the collection.
 - Check whether an element is included in the collection.
 
-```
+```java
 Assume you need a collection of whole numbers. Which of the following statements best describes your situation?
 // Primitive types cannot be stored in collections, but you can use the corresponding wrapper class.
 ```
@@ -620,7 +610,6 @@ ArrayList | LinkedList
 Random access (with index). | Only sequential access of elements.
 Uses dynamically resizing array to implement List. | Uses doubly-linked list to implement List.
 
----
 ## Lambdas
 
 Lambdas are succinctly expressed single method classes that represent  behavior. They can either be assigned to a variable or passed around to  other methods just like we pass data as arguments.
@@ -635,7 +624,7 @@ Why should we use lambdas?
 - Enables support for parallel processing.
 - Produces clear and concise code.
 
-```
+```java
 // This lambda exppression contains 2 arguments
 (s1, s2) -> s1 + s2
 // This lambda exppression contains 1 argument
@@ -654,7 +643,7 @@ A functional interface is a special interface with one and only one  abstract m
 
 Java has numerous single method interfaces. These are all retrofitted, making them functional interfaces. If we want to create our own, all we need to do is to define an interface with one abstract method and stick a @FunctionalInterface annotation on top of it! For example, the following code fragment defines an "IAddable" interface. This is a functional interface whose job is to simply add two identical items of type T.
 
-```
+```java
 @FunctionalInterface
 public interface IAddable<T> {
     // To add two objects
@@ -663,7 +652,7 @@ public interface IAddable<T> {
 ```
 
 Which of the following us not a valid lambda expression.
-```
+```java
 // This expression is valid
 (n1, n2) -> { n1++; return n1 - n2; }
 // This expression is valid
@@ -674,14 +663,13 @@ count -> count++
 (String s1) -> s1 * s1;
 ```
 
-More about lambdas: https://www.oreilly.com/content/whats-new-in-java-8-lambdas/
+Lambda documentation: https://www.oreilly.com/content/whats-new-in-java-8-lambdas/
 
----
 ## Generic Methods
 
 Generic methods are methods that introduce their own type parameters.
 The scope of the type parameter is limited to the method where it is declared.
-```
+```java
 public < T > void printArray (T[ ] array)
 { ... }
 
@@ -704,7 +692,7 @@ NOTE: The type parameter section is surrounded by < >.
 ### Generic Type
 A generic type is a class or an interface that has been declared with one or multiple type parameters.       
 Generic type parameters can be restricted to a group of types that implement a given interface. You can do that by using the keyword 'extends.'
-```
+```java
 class name < T >
 { ... }
 
@@ -712,14 +700,14 @@ class name < T1, T2, .., Tn >
 { ... }
 ```
 
----
 ## Bounded Types
 
 <T> can stand fro any reference type
 Functionality restricted to Object methods.
 Bounded types restrict the types that can be used as type arguments in a parameterized type – e.g. <T Extends Number>, or <T extends Comparable <T>>.
 When comparing bounded types with unbounded types you will find that bounded types restrict the types that can be used as type arguments. At the same time they expand the functionality that is available for implementation.
-```
+
+```java
 // Assume you have 2 classes: Square and Rectangle.
 // Square is a subclass from Rectangle, which means Square is-a Rectangle.
 
@@ -736,7 +724,6 @@ List<ClassB> bList = new ArrayList<>();   // is correct
 List<ClassA> aList = bList;               // is incorrect
 ```
 
----
 ## WildCards & Erasure
 
 In generic code, the wildcard (?) represents an unknown type.
@@ -745,14 +732,14 @@ Wildcards can be upper-bounded and lower-bounded.
 
 Upper-bounded wildcards are used to relax restrictions on a variable.
 The unknown type is either upperBound or a subtype of upperBound.
-```
+```java
 ? extends Number 
 // apply on abstract classes, and interfaces
 ```
 
 Lower Bounded Wildcards
 Used to relax restrictions on a variable
-```
+```java
 ? super lowerBound
 // the unknown type is either lowerBound, or a super type of lowerBound
 ```
@@ -763,14 +750,14 @@ When do I specify Upper Bounded Wildcards?
 
 When do I specify Unbounded Wildcards?
 - When functionality can be provided by Object class ( -> by any class)
-```
+```java
 void printList (List<?> list)
 ```
 
 When do I specify Lower Bounded Wildcards?
 - When I need to add elements of a given type to a collection.
 - The elements have an is-a relationship to the super class, because of that they can be added.
-```
+```java
 void append (List<? super Number> numbers, Number n) {
     numbers.add(n);
 }
@@ -781,7 +768,7 @@ A wildcard can have only one bound, either a lower bound or an upper bound.
 
 Type Erasure 
 Is the process of removing generic type information after the compiler had already checked for type-correctness.
-```
+```java
 List<Integer> will be converted to type List
 ```
 
@@ -792,7 +779,6 @@ The Java compiler applies type erasure like this:
 
 Erasure is the process of removing generic type information after the compiler had already checked for type correctness.
 
----
 ## Class File
 
 Is an abstract representation of file and directory pathnames – Class File is really a Path.
@@ -807,7 +793,7 @@ Relative path
 - A path relative to the current directory
 - e.g.: date.txt
 
-```
+```java
 // Assume you have a variable demo that is declared like this:
 
 File demo = new File("C:\\Demo");
@@ -819,13 +805,12 @@ demo.isDirectory()
 // I would put this line within a for each loop structure.
 ```
 
-```
+```java
 // Assume you need to print all the file names of a given directory, where the file is greater than 100K.
 // Which method should you use to access the content of the given directory?
 listFiles()
 ```
 
----
 ## Files & Streams
 
 A file is a collection of data or information that has a name and is stored on a secondary storage device – files are used to persist data.
@@ -847,7 +832,6 @@ Java creates 3 stream objects when a program begins:
 	
 ––> All these streams can be redirected with the methods setIn, setOut, and setErr.
 
----
 ## File Input with Class Scanner
 
 - Scanner is a simple text scanner that can parse primitive types and strings.
@@ -860,7 +844,7 @@ The try-with-resources statement is a try statement that declares one or more re
 It ensures that each resource is closed at the end of the statement.
 Any object that implements AutoClosable can be used as a resource.
 
-```
+```java
 Scanner (InputStream source)
 e.g. – System.in
 // Constructs a new Scanner that produces values scanned from the specified input stream.
@@ -872,7 +856,7 @@ e.g. – new File("C:\\MyFile.txt")
 NOTE: Linux and macOs use // instead of \\.
 ```
 
-```
+```java
 // What happens if you call the method nextDouble() but the next token that is read is "hello"?
 an InputMismatchException is thrown
 ```
@@ -880,7 +864,6 @@ an InputMismatchException is thrown
 Try-with-Resources
 https://www.baeldung.com/java-try-with-resources
 
----
 ## Cohesion
 
 High cohesion is when you have a class that does a well defined job. Low cohesion is when a class does a lot of jobs that don't have much in common.
@@ -905,7 +888,6 @@ The notion of cohesion is strongly related with the notion of coupling; also, th
 
 High cohesion is a software engineering concept. Basically, it says a class should only do what it is supposed to do, and does it fully. Do not overload it with functions that it is not supposed to do, and whatever directly related to it should not appear in the code of some other class either. Examples are quite subjective, since we also have to consider the scale. A simple program should not be too modularized or it will be fragmented; while a complex program may need more level of abstractions to take care of the complexity.
 
----
 ## Exception Handling
 
 - Deals with problems that occur during runtime.
@@ -913,9 +895,8 @@ High cohesion is a software engineering concept. Basically, it says a class shou
 - Allows you to take appropriate action.
 - Makes code more fault-tolerant and robust.
 
-
 ### Stack Trace
-```
+```java
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 100    // name of exception
      at Erathostenes.initialize(Erathostenes.java:33)                       // (at) method call stack ––> exception in method initialize, class Erathostenes, line 33.
      at Erathostenes.getPrimeNumbers(Erathostenes.java:12)                  // (at) method call stack
@@ -927,16 +908,15 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 100    // n
 // NOTE: if it states (Unknown source), then the exception belongs to the Java API – not available in the JVM.
 ```
 
-```
+```java
 The result of dividing one floating point number by zero is "Infinity."
 The result of dividing one integer number by zero is an "ArithmeticException."
 ```
 
----
 ## Catching and Handling Exceptions
 
 Try statements help us respond to a runtime problem before a stack trace is presented to the user.
-```
+```java
 try {
     ... // includes code that could throw an exception ––> exactly 1 try block
 } catch (ExceptionType1 ex) {
@@ -977,7 +957,6 @@ Error | Don't try catching it
 RuntimeException | Fix the code
 Exceptions that are not RuntimeExceptions | Catch or declare
 
----
 ## Serialization
 
 Is the process of converting an object into a stream.
@@ -992,7 +971,7 @@ To create a serialized object in a file, create an ObjectOutputStream with a Fil
 - FileOutputStream: Writes binary data to a file (takes a sequence of bytes and writes it to a file).
 - ObjectOutputStream: Converts a Java object (or a primitive type) to a sequence of bytes and writes it to an OutputStream (takes an object and converts it to a sequence of bytes).– e.g. FileOutputStream, ByteArrayOutputStream, etc.
 
-```
+```java
 Serialization
 new ObjectOutputStream(new FileOutputStream("myFile.ser"))
 // object –> sequence of bytes –> file
