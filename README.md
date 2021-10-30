@@ -54,7 +54,7 @@ n | exactly n instances
 1 .. * | one or more instances
 n .. m | n to m instances
 
-## Fundamentals of Programming – Concepts
+## Fundamentals of Programming
 - Access modifiers determine who can access a given class or class member – e.g. public, private...
 - Class declarations are used to create new types (like a blueprint).
 - 'new' is always used in combination with the constructor; it allocates memory for the new object.
@@ -375,7 +375,7 @@ boolean | | -
 - Interfaces allow you to treat unrelated classes polymorphically.
 - Using the same signature for the same functionality makes your code more clear and easier to read.
 
-How to use interfaces:
+<b>How to use interfaces:</b>
 1. Declare a new interface that describes the desired functionality.
 2. Implement this interface in classes that require that functionality.
 3. Use interface as a type.
@@ -385,7 +385,7 @@ One of the most commonly used interfaces is the interface Comparable (compareTo)
 Java interfaces are reference types, and cannot be instantiated.
 Interfaces are implicitly abstract.
 
-### Interface members:
+### Interface Members
 - Constants (implicitly public, static & final).
 - Abstract / default / static/ private methods (methods that are declared in a Java interface are assumed to be public and abstract unless specified otherwise).
 - Nested types.
