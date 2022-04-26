@@ -1,5 +1,7 @@
 ## JavaDoc
 
+<!--CSIS 1410 - Object Oriented Programming Coursework at Salt Lake Community College.-->
+
 JavaDoc is a documentation generator from Sun – it generates API documentation in HTML format.
 The "doc comment" format is <i>de facto</i> industry standard. They minimize the effort of creating documentation, and make the process of keeping documentation up-to-date or using third-party classes (incl. Java API) easier. They also allow you to hyperlink related documents together.
 
