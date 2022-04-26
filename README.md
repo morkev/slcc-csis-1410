@@ -1,6 +1,4 @@
 # SLCC-CSIS-1410
-Give me a star in GitHub if I was able to help you!
-
 ## JavaDoc
 
 JavaDoc is a documentation generator from Sun – it generates API documentation in HTML format.
