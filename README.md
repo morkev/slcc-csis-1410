@@ -1,7 +1,5 @@
 # SLCC-CSIS-1410
-Give me a star in GitHub or buy me a coffee if I helped you! Below you'll find my notes. A or A+ guaranteed.
-
-<a href="https://www.buymeacoffee.com/morkev" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+Give me a star in GitHub if I was able to help you!
 
 ## JavaDoc
 
