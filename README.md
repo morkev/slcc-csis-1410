@@ -34,7 +34,7 @@ Binary Associations:
 - ClassY knows about ClassX.
 ```
 
-### Types of Unary Associations:
+### Types of Unary Associations
 - Association ... has-a relationship.
 - Aggregation ... whole–part relationships.
 	- ClassB is part of ClassA.
