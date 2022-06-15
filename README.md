@@ -1,6 +1,7 @@
 # Object Oriented Programming in Java
 
-I created this repository to help other students – please, use my code and make use of my notes. If this repository was helpful, follow me on GitHub or give me a star – it's the only way I can rate its usefulness. We are programmers, we help each other!
+Clone the repository:
+`git clone https://github.com/morkev/slcc-csis-1410.git`
 <!--CSIS 1410 - Object Oriented Programming Coursework at Salt Lake Community College.-->
 
 ## JavaDoc
