@@ -1,7 +1,9 @@
-## JavaDoc
+# Object Oriented Programming in Java
 
+I created this repository to help other students – please, use my code and make use of my notes. If this repository was helpful, follow me on GitHub or give me a star – it's the only way I can rate its usefulness. We are programmers, we help each other!
 <!--CSIS 1410 - Object Oriented Programming Coursework at Salt Lake Community College.-->
 
+## JavaDoc
 JavaDoc is a documentation generator from Sun – it generates API documentation in HTML format.
 The "doc comment" format is <i>de facto</i> industry standard. They minimize the effort of creating documentation, and make the process of keeping documentation up-to-date or using third-party classes (incl. Java API) easier. They also allow you to hyperlink related documents together.
 
