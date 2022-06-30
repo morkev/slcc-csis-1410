@@ -1,6 +1,5 @@
 # Object Oriented Programming in Java
 
-Clone the repository:
 `git clone https://github.com/morkev/slcc-csis-1410.git`
 <!--CSIS 1410 - Object Oriented Programming Coursework at Salt Lake Community College.-->
 
