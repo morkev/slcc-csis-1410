@@ -1,5 +1,7 @@
 # Object Oriented Programming in Java
 
+<img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/morkev/slcc-csis-1410"> ![](https://img.shields.io/appveyor/build/gruntjs/grunt) <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/morkev/slcc-csis-1410">
+
 `git clone https://github.com/morkev/slcc-csis-1410.git`
 <!--CSIS 1410 - Object Oriented Programming Coursework at Salt Lake Community College.-->
 
